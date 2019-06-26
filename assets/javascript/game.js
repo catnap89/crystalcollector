@@ -20,19 +20,14 @@
 // =====================================================
 
 var randomNumber = Math.floor(Math.random() * 102) + 19; 
-console.log(randomNumber);
 
 var crystalNumRed = Math.floor(Math.random() * 12) + 1;
-console.log(crystalNumRed);
 
 var crystalNumBlue = Math.floor(Math.random() * 12) + 1;
-console.log(crystalNumBlue);
 
 var crystalNumYellow = Math.floor(Math.random() * 12) + 1;
-console.log(crystalNumYellow);
 
 var crystalNumGreen = Math.floor(Math.random() * 12) + 1;
-console.log(crystalNumGreen);
 
 var totalScore = 0;
 
@@ -50,18 +45,7 @@ $(".r-crystal").on("click", function() {
   totalScore += crystalNumRed;
   $(".total-score").text(totalScore);
 
-  if (totalScore === randomNumber) {
-    wins++;
-    restart();
-  } 
-
-  if (totalScore > randomNumber) {
-    losses++
-    restart();
-  }
-
-  $(".wins").text("Wins: " + wins);
-  $(".losses").text("Losses: " + losses);
+  winLoseCondition();
 
 });
 
@@ -71,19 +55,7 @@ $(".b-crystal").on("click", function() {
   totalScore += crystalNumBlue;
   $(".total-score").text(totalScore);
 
-  if (totalScore === randomNumber) {
-    wins++;
-    restart();
-    console.log(restart)
-  } 
-
-  if (totalScore > randomNumber) {
-    losses++
-    restart();
-  }
-
-  $(".wins").text("Wins: " + wins);
-  $(".losses").text("Losses: " + losses);
+  winLoseCondition();
 
 });
 
@@ -93,18 +65,7 @@ $(".y-crystal").on("click", function() {
   totalScore += crystalNumYellow;
   $(".total-score").text(totalScore);
 
-  if (totalScore === randomNumber) {
-    wins++;
-    restart();
-  } 
-
-  if (totalScore > randomNumber) {
-    losses++
-    restart();
-  }
-
-  $(".wins").text("Wins: " + wins);
-  $(".losses").text("Losses: " + losses);
+  winLoseCondition();
 
 });
 
@@ -114,6 +75,15 @@ $(".g-crystal").on("click", function() {
   totalScore += crystalNumGreen;
   $(".total-score").text(totalScore);
 
+  winLoseCondition();
+
+});
+
+$(".total-score").text(totalScore); // This is to display 0 as total score when the game start.
+
+
+function winLoseCondition (){
+
   if (totalScore === randomNumber) {
     wins++;
     restart();
@@ -126,25 +96,22 @@ $(".g-crystal").on("click", function() {
 
   $(".wins").text("Wins: " + wins);
   $(".losses").text("Losses: " + losses);
-
-});
-
-$(".total-score").text(totalScore); // This is to display 0 as total score when the game start.
-
+};
 
 // Resets random number to match, random numbers assigned to each crystals, total score.
 function restart() {
   randomNumber = Math.floor(Math.random() * 102) + 19;
-  console.log(randomNumber);
+  // console.log(randomNumber);
   crystalNumRed = Math.floor(Math.random() * 12) + 1;
-  console.log(crystalNumRed);
+  // console.log(crystalNumRed);
   crystalNumBlue = Math.floor(Math.random() * 12) + 1;
-  console.log(crystalNumBlue);
+  // console.log(crystalNumBlue);
   crystalNumYellow = Math.floor(Math.random() * 12) + 1;
-  console.log(crystalNumYellow);
+  // console.log(crystalNumYellow);
   crystalNumGreen = Math.floor(Math.random() * 12) + 1;
-  console.log(crystalNumGreen);
+  // console.log(crystalNumGreen);
   totalScore = 0;
   $(".total-score").text(totalScore);
   $(".rng").text(randomNumber);
 }
+
