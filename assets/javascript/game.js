@@ -79,19 +79,28 @@ $(".g-crystal").on("click", function() {
 
 });
 
-$(".total-score").text(totalScore); // This is to display 0 as total score when the game start.
+$(".total-score").text(totalScore);       // This is to display 0 as total score when the game start.
+$(".wins").text("Wins: " + wins);         // This is to display 0 at win counter when the game start.
+$(".losses").text("Losses: " + losses);   // This is to display 0 at losses counter when the game start.
+
+
+// Functions //
+// =====================================================
 
 
 function winLoseCondition (){
 
   if (totalScore === randomNumber) {
     wins++;
+    $(".win-lose").text("You Win!");
     restart();
   } 
 
   if (totalScore > randomNumber) {
     losses++
+    $(".win-lose").text("You Lost!");
     restart();
+
   }
 
   $(".wins").text("Wins: " + wins);
