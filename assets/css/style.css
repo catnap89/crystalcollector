@@ -37,6 +37,7 @@ body {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  padding: 30px;
   
 
 }
@@ -47,7 +48,7 @@ body {
 
 .random-number {
   
-  margin-top: 30px;
+  margin-top: 10px;
   
 }
 
@@ -63,10 +64,10 @@ body {
 
 .counters {
   
-  margin-top: 30px;
+  margin-top: 10px;
   background-color: aquamarine;
   height: 150px;
-  padding: 30px;
+  padding: 20px;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
@@ -75,7 +76,7 @@ body {
 
 .score-container {
 
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: yellow;
   margin-left: auto;
   margin-right: auto;
